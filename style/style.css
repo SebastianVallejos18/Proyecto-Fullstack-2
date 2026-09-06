@@ -1,3 +1,18 @@
 * {
     box-sizing: border-box;
 }
+
+.headerStyle {
+    box-shadow: 2px 2px 20px rgb(26, 47, 139);
+    background-color: rgb(29, 134, 178);
+    color: white; 
+    flex: 10px;
+    align-items: center;
+    width: 900px;
+    height: 150px;
+}
+
+.footerStyle {
+    background-color: rgb(29, 134, 178);
+    align-items: last baseline;
+}
