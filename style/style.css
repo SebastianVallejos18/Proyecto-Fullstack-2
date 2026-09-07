@@ -8,12 +8,11 @@ ul {
 
 /* Header estilizado */
 .headerStyle {
-    box-shadow: 2px 2px 20px rgb(0, 0, 0);
     background-color: rgb(29, 134, 178);
     color: white; 
     padding: 20px;
     text-align: center;
-    margin: 0 auto;
+    margin: auto;
 }
 
 .headerStyle a {
@@ -74,18 +73,18 @@ ul {
     margin-top: 40px;
 }
 
-/* =========================================== */
-/* ===< ESTILOS PARA MENU TIPO HAMBURGUESA >=== */
-/* =========================================== */
+/* ==========================================
+   1. ESTILOS BASE / MÓVIL (Por debajo de 768px)
+   ========================================== */
 
-/* Casilla de verificación invisible */
+/* Casilla de verificación invisible siempre en móvil */
 .menu-toggle-checkbox {
     display: none;
 }
 
-/* Ocultar el botón hamburguesa en desktop */
+/* Botón hamburguesa visible por defecto */
 .hamburger-btn {
-    display: none;
+    display: flex;
     flex-direction: column;
     justify-content: space-between;
     width: 30px;
@@ -98,62 +97,82 @@ ul {
     display: block;
     height: 3px;
     width: 100%;
-    background-color: rgb(26, 47, 139);
+    background-color: #ffffff;
     border-radius: 3px;
     transition: all 0.3s ease;
 }
 
-/* Estilos para el menú en desktop */
+/* El menú nace colapsado */
 header nav ul {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding-top: 15px;
+    padding-left: 0;
     list-style: none;
-    padding: 0;
-    margin: 15px 0 0 0;
 }
 
 header nav a {
-    color: rgb(29, 134, 178);
+    color: white;
     text-decoration: none;
     font-weight: 600;
 }
 
-/* ------------------------------------------
-   @media query para dispositivos móviles (<768px)
-   ------------------------------------------ */
-@media (max-width: 768px) {
-    /* Mostrar el botón hamburguesa */
+/* Desplegar menú al marcar la casilla */
+.menu-toggle-checkbox:checked ~ nav ul {
+    display: flex;
+}
+
+/* Grilla a 1 columna en teléfonos */
+.products-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+}
+
+/* ==========================================
+   2. VISTA TABLETA (Ancho mín: 768px)
+   ========================================== */
+@media (min-width: 768px) {
     .hamburger-btn {
-        display: flex;
-    }
-
-    /* Ocultar la lista del nav por defecto en móviles */
-    header nav ul {
         display: none;
-        flex-direction: column;
-        align-items: center;
-        gap: 12px;
-        padding-top: 15px;
     }
 
-    /* Al pulsar la hamburguesa (checkbox checked), mostrar el menú */
-    .menu-toggle-checkbox:checked ~ nav ul {
+    header nav ul {
         display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 20px;
+        padding-top: 0;
     }
 
-    /* Ajuste de tarjetas de productos a 2 columnas en móviles */
     .products-grid {
-        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-        gap: 12px;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
     }
 }
 
-/* =========================================== */
-/* ===< ESTILOS CATÁLOGO DE PRODUCTOS >=== */
-/* =========================================== */
+/* ==========================================
+   3. VISTA ESCRITORIO (Ancho mín: 1280px)
+   ========================================== */
+@media (min-width: 1280px) {
+    .products-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+    }
 
-/* Navegación rápida por categorías */
+    section {
+        max-width: 1200px;
+        margin: 40px auto;
+    }
+}
+
+/* ==========================================
+   ESTILOS GENERALES CATÁLOGO Y TARJETAS
+   ========================================== */
+
+/* Navegación rápida por categorías (si se usa) */
 .categories-nav {
     background-color: #f4f6f8;
     padding: 12px 15px;
@@ -184,7 +203,7 @@ header nav a {
     color: rgb(26, 47, 139);
 }
 
-/* Secciones y Grilla */
+/* Secciones */
 section {
     max-width: 1200px;
     margin: 40px auto;
@@ -196,12 +215,6 @@ section h2 {
     border-bottom: 2px solid rgb(29, 134, 178);
     padding-bottom: 8px;
     margin-bottom: 20px;
-}
-
-.products-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: 20px;
 }
 
 /* Tarjetas de Producto (<article>) */
@@ -222,12 +235,12 @@ section h2 {
     box-shadow: 0 6px 12px rgba(29, 134, 178, 0.15);
 }
 
-/* Imágenes fijas para no romper layout */
+/* Imágenes fijas */
 .products-grid img {
     width: 100%;
     height: 160px;
     object-fit: cover;
-    background-color: #f1f5f9; /* Fondo gris mientras no hay src */
+    background-color: #f1f5f9;
     border-radius: 4px;
     margin-bottom: 10px;
 }
@@ -238,7 +251,7 @@ section h2 {
     color: #1e293b;
 }
 
-/* Formato para los dos <p> de la tarjeta */
+/* Precios y descripción */
 .products-grid p:nth-of-type(1) {
     font-size: 1.2rem;
     font-weight: bold;
