@@ -2,17 +2,70 @@
     box-sizing: border-box;
 }
 
+/* Header estilizado */
 .headerStyle {
-    box-shadow: 2px 2px 20px rgb(26, 47, 139);
+    box-shadow: 2px 2px 20px rgb(0, 0, 0);
     background-color: rgb(29, 134, 178);
     color: white; 
-    flex: 10px;
-    align-items: center;
-    width: 900px;
-    height: 150px;
+    padding: 20px;
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.headerStyle a {
+    color: white;
+}
+
+/* Disposición vertical del formulario */
+.auth-container {
+    max-width: 400px;
+    margin: 30px auto;
+    padding: 20px;
+}
+
+.auth-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.auth-container label {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.auth-container input {
+    padding: 8px;
+    margin-top: 4px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.auth-container button {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: rgb(29, 134, 178);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Borde y fondo rosado claro para errores */
+.campo-error {
+    border: 2px solid red !important;
+    background-color: #ffe6e6 !important;
+}
+
+.campo-verified {
+    border: 2px solid rgb(59, 194, 93) !important;
+    background-color: #ceffd2 !important;
 }
 
 .footerStyle {
     background-color: rgb(29, 134, 178);
-    align-items: last baseline;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin-top: 40px;
 }
