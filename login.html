@@ -24,10 +24,12 @@
             <h2>Inicio de sesión</h2>
             <form id="form-login">
                 <label for="nombre-de-usuario">Nombre de usuario</label>
-                <input type="text" id="nombre-de-usuario" name="nombre-de-usuario" placeholder="Diego Alvear" required>
+                <input type="text" id="nombre-de-usuario" name="nombre-de-usuario" placeholder="Diego Alvear" autocomplete="username" required>
+                <span class="error-texto" id="error-nombre-de-usuario"></span>
 
                 <label for="correo">Correo electrónico</label>
-                <input type="email" id="correo" name="correo" placeholder="ejemplo@gmail.com" required>
+                <input type="email" id="correo" name="correo" placeholder="ejemplo@gmail.com" autocomplete="email" required>
+                <span class="error-texto" id="error-correo"></span>
 
                 <button type="submit">Iniciar sesión</button>
                 <p id="mensajeConfirmacion"></p>

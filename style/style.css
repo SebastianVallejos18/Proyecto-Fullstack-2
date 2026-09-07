@@ -65,6 +65,43 @@ ul {
     background-color: #ceffd2 !important;
 }
 
+.error-texto {
+    color: red;
+    font-size: 0.85rem;
+    display: block;
+    min-height: 1em;
+}
+
+.btn-agregar {
+    margin-top: 8px;
+}
+.mensaje-agregado {
+    display: block;
+    font-size: 0.85rem;
+    min-height: 1em;
+}
+
+.video-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: 20px auto;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
 .footerStyle {
     background-color: rgb(29, 134, 178);
     color: white;
